@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import List from "./components/List";
-import Alert from "./components/Alert";
+
 import "./App.css";
 
 const getLocalStorage = () => {
@@ -50,16 +50,21 @@ function App() {
     showAlert(true, "danger", "empty list");
     setList([]);
   };
-  const removeItem = (id) => {
-    showAlert(true, "danger", "item removed");
-    setList(list.filter((item) => item.id !== id));
+ 
+  const Alert = ({ type, msg,  list }) => {
+    useEffect(() => {
+      const timeout = setTimeout(() => {
+        
+      }, 3000);
+      return () => clearTimeout(timeout);
+    }, [list]);
+    return <p className={`alert alert-${type}`}>{msg}</p>;
   };
-  const editItem = (id) => {
-    const specificItem = list.find((item) => item.id === id);
-    setIsEditing(true);
-    setEditID(id);
-    setName(specificItem.title);
-  };
+  
+
+
+
+
   useEffect(() => {
     localStorage.setItem("list", JSON.stringify(list));
   }, [list]);
@@ -70,7 +75,7 @@ function App() {
 
         <h3>Todo List</h3>
         <div className="form-control">
-          <input type="text" className="grocery" placeholder="Input your Todo List" value={name} onChange={(e) => setName(e.target.value)} />
+          <input type="text" className="grocery" placeholder="Enter Task" value={name} onChange={(e) => setName(e.target.value)} />
           <button type="submit" className="submit-btn">
             {isEditing ? "edit" : "Submit!"}
           </button>
@@ -78,7 +83,7 @@ function App() {
       </form>
       {list.length > 0 && (
         <div className="grocery-container">
-          <List items={list} removeItem={removeItem} editItem={editItem} />
+          <List items={list} />
           <button className="clear-btn" onClick={clearList}>
             clear items
           </button>

@@ -1,41 +1,6 @@
-:root {
-  --clr-grey-5: hsl(210, 22%, 49%);
-  --clr-grey-10: hsl(210, 36%, 96%);
-  --clr-red-dark: hsl(360, 67%, 44%);
-  --clr-red-light: hsl(360, 71%, 66%);
-  --clr-green-dark: hsl(125, 67%, 44%);
-  --clr-green-light: hsl(125, 71%, 66%);
-  --transition: all 0.3s linear;
-  --spacing: 0.1rem;
-  --radius: 0.25rem;
-  --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-::-webkit-scrollbar {
-  width: 5px;
-}
-
-::-webkit-scrollbar-track {
-  background: #666;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #c2c2c2;
-  border-radius: 100px;
-}
-
-*,
-::after,
-::before {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background: #111827;
+  background: #ffffff;
   color: black;
   line-height: 1.5;
   font-size: 0.875rem;
@@ -153,7 +118,7 @@ main {
 }
 
 .section-center {
-  background: white;
+  background: rgb(224, 105, 105);
   border-radius: var(--radius);
   box-shadow: var(--light-shadow);
   transition: var(--transition);
@@ -214,7 +179,7 @@ main {
 }
 
 .submit-btn {
-  background: #2563eb;
+  background: #0aa746;
   border-color: transparent;
   flex: 0 0 5rem;
   display: grid;
@@ -267,31 +232,6 @@ main {
   transition: var(--transition);
 }
 
-.edit-btn,
-.delete-btn {
-  background: transparent;
-  border-color: transparent;
-  cursor: pointer;
-  font-size: 0.7rem;
-  margin: 0 0.15rem;
-  transition: var(--transition);
-}
-
-.edit-btn {
-  color: var(--clr-green-light);
-}
-
-.edit-btn:hover {
-  color: var(--clr-green-dark);
-}
-
-.delete-btn {
-  color: var(--clr-red-light);
-}
-
-.delete-btn:hover {
-  color: var(--clr-red-dark);
-}
 
 .clear-btn {
   text-transform: capitalize;
@@ -301,7 +241,7 @@ main {
   align-items: center;
   background: transparent;
   border-color: transparent;
-  color: var(--clr-red-light);
+  color: black;
   margin: 0 auto;
   font-size: 0.85rem;
   letter-spacing: var(--spacing);
